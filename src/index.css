@@ -1,0 +1,45 @@
+@import "https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap";
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: Poppins,sans-serif;
+font-weight: 500;
+font-style: normal;
+overflow-x: hidden;
+font-size: 14px;
+}
+:root{
+--main-color: #12b127;
+--border-color:rgb(212,175,55);
+font-family: Poppins,sans-serif;
+}
+a {
+  color: var(--border-color); 
+  text-decoration: none; 
+}
+a:focus{
+color: #000;
+}
+p {
+margin: 0;
+padding: 0;
+font-size: 14px;
+line-height: 24px;
+}
+* {
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-decoration: none;
+}
+img{
+
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
