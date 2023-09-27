@@ -9,34 +9,47 @@ import Auth from './Auth';
 const Header=()=>{
       const {gettoken,logout,token,getuser,user} = Auth();
 var rolename = getuser();
-function renderLayout(){
-    if(!rolename.roleName=="AdminRestaurant")
-        return(
+function swtichRoles(role) {
+    switch(role) {
+      case 'User':
+        return (
             <h2>
+                hi User
             </h2>
-        )
-        if(rolename.roleName=="")
-        return(
-            <h2>
-            </h2>
-        )
-        if(rolename.roleName == "Admin")
-        return(
+        ) 
+      case 'admin':
+             return(
+                <li className="menubar_content-list-item">
             <Link to='/admin'>
             <div className='link'>
                 Go To Admin Page
             </div>
             </Link>
+
+                </li>
         )
-    return(
+      case 'AdminRestaurant':
+           return(
         <li className="menubar_content-list-item">
             <Link to={`/ownerRestaurant/${rolename.id}`}>
              <div   className="link">Go To Store</div>
             </Link>
        
-        </li>
-    )
-}
+        </li>)
+
+        case 'ADMINHOTEL':
+            return(
+            <li className="menubar_content-list-item">
+                <Link to={`/ownerHotel/${rolename.id}`}>
+                <div   className="link">Go To Your Hotel</div>
+                </Link>
+
+            </li>)
+      default:
+        return null
+    }
+  }
+
 const [openModalLogin,setopenModalLogin] = useState(false);
 const [openregisterform,setregisterform] = useState(false);
 
@@ -99,7 +112,11 @@ const logoutuser =()=>{
                         <div onClick={()=>logoutuser()}  className="link">Logout</div>
                         </li>
                         {getuser() ? (
-                        renderLayout()
+                        rolename.roleName.map((role) => {
+                            return(
+                                    swtichRoles(role)
+                            )
+                        })
                         ) : (
                             <li className="menubar_content-list-item">
                         <div onClick={()=>logoutuser()}  className="link"></div>
@@ -108,9 +125,6 @@ const logoutuser =()=>{
                     </Fragment>
                     )
                     }
-                    
-                   
-                   
                     <li className="menubar_content-list-item list-separator">
                         <a href="" className="link"></a>
                     </li>

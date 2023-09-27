@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const Room =(props)=>{
+
   
 function renderData (){
     if(!props) return (<h1>Loading</h1>)
@@ -38,7 +39,7 @@ function renderData (){
                                             <section className="rate">
                                                 <div className="rate-price">{room.price} / day</div>
                                                 <div className="rate-book-wrapper">
-                                                    <Link date={props.date} to={`/HotelBooking/${room.id_Room1s}/${props.day}`}><button className="btn-book"> Book</button></Link>
+                                                    <Link date={props.date} to={`/HotelBooking/${room.id_Room1s}/${props.day}/${props.checkOut}/${props.checkIn}`}><button className="btn-book"> Book</button></Link>
                                                     
                                                 </div>
                                             </section>

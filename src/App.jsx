@@ -32,17 +32,18 @@ import AdminPage from './ComponentAdmin/AdminPage';
 import DetailHotel from './Component/DetailHotel';
 import SelectRoom from './Component/SelectRoom';
 import HotelBooking from './Component/HotelBooking';
-
+import AdminHotelPage from './ComponentAdmin/AdminHotelPage';
+import AdminHotelPageOrder from './ComponentAdmin/AdminHotelPageOrder';
 function App() {
 return(
 <Fragment>
     <Routes>
-          
           <Route path="/selectRoom/:id"  element={<SelectRoom/>} />
-          <Route path="/HotelBooking/:id/:day"  element={<HotelBooking/>} />
+          <Route path="/HotelBooking/:id/:day/:checkOut/:checkIn"  element={<HotelBooking/>} />
           <Route path="/Hotel/:id" element={<DetailHotel/>}/>
           <Route path="/"  element={<TextFile/>} />
           <Route path="/restaurant" element={<Restaurant />} />
+          <Route path="/Dashboard" element={<Restaurant />} />
           <Route path="/hotel" element={<Hotel/>} />
           <Route path="/magazine" element={<Magazine/>} />
           <Route path="/tf" element={<TextFile/>} />
@@ -52,9 +53,10 @@ return(
           <Route path="/province" element={<ProviceForm/>} />
           <Route path="/admin" element={<Admin/>} />
           <Route path="/ownerRestaurant/:id" element={<AdminPage/>} />
+          <Route path="/ownerHotel/orders/:id/:idhotel" element={<AdminHotelPageOrder/>} />
+          <Route path="/ownerHotel/:id" element={<AdminHotelPage/>} />
         </Routes>
 </Fragment>
 );
 };
-
 export default App ;

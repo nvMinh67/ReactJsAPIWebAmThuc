@@ -2,18 +2,14 @@ import React,{Fragment} from "react";
 import { useState,useEffect } from "react";
 import Admin from "../Component/Admin";
 import productApi from "../api/productApi";
-
 const ModalEditProduct =(props)=>{
-
     const [files,setFiles] = useState([]);
     const [name,setName] = useState();
     const [price,setPrice] = useState();
     const [dish,setDish] = useState();
     const [id,setId] = useState('');
-
     const handlechange=(e)=>{
-     setFiles(e.target.files);
-    }
+     setFiles(e.target.files);}
     useEffect(() => {
         setId(props.idProduct);
                 const fetchProductList = async () => {
@@ -47,7 +43,7 @@ const ModalEditProduct =(props)=>{
           }).then(props.onclose)
           .then(data=>console.log(data))
           .catch(err => console.log(err));
-    }
+            }
      function renderForm (){
         if(!dish) return 'Loadding';
         return (
@@ -71,11 +67,7 @@ const ModalEditProduct =(props)=>{
             <hr/>
         </form>
         )
-
-        
-        
     }
-  
     if(!props.open) return null
     return ( 
     <Fragment>

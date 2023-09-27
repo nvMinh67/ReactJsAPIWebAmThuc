@@ -1,9 +1,6 @@
 import React,{Fragment} from "react";
 import { useState } from "react";
-import Admin from "../Component/Admin";
-import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import swal from "sweetalert";
 import { redirect } from "react-router-dom";
 
 const ModalAddProduct =(props)=>{
@@ -14,9 +11,9 @@ const ModalAddProduct =(props)=>{
     const handlechange=(e)=>{
      setFiles(e.target.files);
     }
-    function redirectBack(){
-        return redirect(`/ownerRestaurant/${props.admin}`);
-    }
+    // function redirectBack(){
+    //     return redirect(`/ownerRestaurant/${props.admin}`);
+    // }
     function handleupload(e){
         e.preventDefault();
         const formData = new FormData();

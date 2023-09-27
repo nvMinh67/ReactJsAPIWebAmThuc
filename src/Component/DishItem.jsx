@@ -7,16 +7,9 @@ import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-
-
 // import required modules
 import { Pagination } from "swiper";
-
 const DishItem =({users})=>{
-
-
-  
 function renderelement(){
   if(users){
     return(
@@ -113,12 +106,6 @@ function renderelement(){
      
   }
 }
-
-
-
-   
-
-
     return (
         <>
           <Swiper
@@ -144,8 +131,6 @@ function renderelement(){
             modules={[Navigation, Mousewheel, Keyboard]}
             className="mySwiper"
           >
-
-
      {renderelement()}
             
             

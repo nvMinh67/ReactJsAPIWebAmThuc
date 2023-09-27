@@ -31,9 +31,12 @@ const SelectRoom = () =>{
         }
         fetchHotel();
     },[]);
+    // var checkIn = `${date[1].y}-04-13 09:49:00.0000000`;
+    // console.log(checkIn);
    
-    const day = (((date[1]-date[0])/1000)/(24*3600));
-    console.log(day);
+    const days = (((date[1]-date[0])/1000)/(24*3600));
+
+    
     function handleCHange (){
     
           
@@ -89,6 +92,7 @@ const SelectRoom = () =>{
                 <h1>Loading....................</h1> )
         return ( 
         <Fragment>
+            {/* {console.log(date[])} */}
             <Header/>
                    <main>
             <div className="mashead masthead-gallery" style={{position:'relative'}}>
@@ -287,7 +291,7 @@ const SelectRoom = () =>{
                                     </div>
                                 </div>
                                 <div className="room">
-                                <Room hotels={hotel.resRoomDetail} day={day}></Room>
+                                <Room hotels={hotel.resRoomDetail} day={days} checkOut={date[1]} checkIn={date[0]}></Room>
                                 </div>
                                 <div className="">
                                     <h4 className="header-content detail-restaurant">Additional Information</h4>

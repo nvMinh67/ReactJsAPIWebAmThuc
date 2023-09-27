@@ -13,7 +13,6 @@ const DetailRestaurant =()=>{
         try {
           const response = await productApi.get(id);
           setrestaurant(response);
-      
         } catch (error) {
           console.log('Failed to fetch product list: ', error);
         }
